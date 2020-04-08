@@ -34,18 +34,12 @@ const BoldGray = styled.span`
   font-weight: bold;
 `;
 
-export const NetworkStatus = (): JSX.Element => {
+interface Props {
+  amountEth: number;
+}
+
+export const NetworkStatus = ({ amountEth }: Props): JSX.Element => {
   const m: boolean = (window as any).mobileCheck();
-  const [amountEth, setAmountEth] = useState(0);
-
-  useEffect(() => {
-    const getBalance = async () => {
-      const ethBalance = await queryContract();
-      setAmountEth(ethBalance);
-    };
-
-    getBalance();
-  });
 
   const calculatePercentage = (amountEth: number) => {
     const percentage = (amountEth / MAINNET_ETH_REQUIREMENT) * 100;
