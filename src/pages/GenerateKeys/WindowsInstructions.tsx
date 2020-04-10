@@ -21,7 +21,16 @@ const Section = styled.div`
 
 export const WindowsInstructions = ({ validatorCount }: Props) => {
   const [animateTerminal, setAnimateTerminal] = useState<boolean>(false);
-  const terminalCommands = [`we need windows commands ${validatorCount}`];
+  const terminalCommands = [
+    `curl -UseBasicParsing https://github.com/ethereum/eth2.0-deposit-cli/archive/master.zip -outfile eth2-deposit-cli.zip`,
+    `Expand-Archive .\\eth2-deposit-cli.zip . eth2-deposit-cli`,
+    `cd .\\eth2-deposit-cli\\eth2.0-deposit-tooling-master`,
+    `pip3 install -r .\\requirements.txt`,
+    `python3 src/deposit.py --num_validators ${
+      // eslint-disable-next-line no-template-curly-in-string
+      validatorCount === 0 ? '${VALIDATOR_COUNT}' : validatorCount
+    }`,
+  ];
 
   return (
     <div style={{ animation: `fadeIn 1s` }}>
@@ -90,7 +99,7 @@ export const WindowsInstructions = ({ validatorCount }: Props) => {
           4. Generate deposit keys using the Ethereum Foundation deposit tool
         </Heading>
         <Text className="mt20 mb20">
-          Type the following lines into the terminal window.
+          Type the following lines into a Powershell terminal window.
         </Text>
         <ScrollAnimation
           animateIn="fadeIn"
