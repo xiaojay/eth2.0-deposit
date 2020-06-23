@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Select } from 'grommet';
 import { AcknowledgementIdsEnum } from '../../store/reducers';
 import { Button } from '../../components/Button';
 import { Text } from '../../components/Text';
 import { Heading } from '../../components/Heading';
 import { Link } from '../../components/Link';
 import { routesEnum } from '../../Routes';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { updateAcknowledgementState } from '../../store/actions/acknowledgementActions';
+import { updateWorkflow } from '../../store/actions/workflowActions';
+import { updateNetwork } from '../../store/actions/networkActions';
 
 const Container = styled.div`
   width: 100%;
@@ -33,9 +39,11 @@ interface AcknowledgementSectionProps {
   handleGoBackClick: (id: AcknowledgementIdsEnum) => void;
   handleSubmit: () => void;
   allAgreedTo: boolean;
+  network: string;
+  dispatchUpdateNetwork: any;
 }
 
-export const AcknowledgementSection = ({
+const _AcknowledgementSection = ({
   title,
   content,
   acknowledgementId,
@@ -44,6 +52,8 @@ export const AcknowledgementSection = ({
   handleGoBackClick,
   handleSubmit,
   allAgreedTo,
+  network,
+  dispatchNetworkUpdate,
 }: AcknowledgementSectionProps & AcknowledgementSectionData): JSX.Element => {
   const isIntroSection =
     acknowledgementId === AcknowledgementIdsEnum.introSection;
@@ -56,9 +66,8 @@ export const AcknowledgementSection = ({
         <div className="flex center p30">
           <Button
             className="mr10"
-            onClick={
-              () =>
-                handleGoBackClick(AcknowledgementIdsEnum.confirmation)
+            onClick={() =>
+              handleGoBackClick(AcknowledgementIdsEnum.confirmation)
             }
             width={100}
             label="Back"
@@ -82,20 +91,36 @@ export const AcknowledgementSection = ({
     }
     return (
       <div className="flex center p30">
-        {!isIntroSection && (
-          <Button
-            width={100}
-            onClick={() => handleGoBackClick(acknowledgementId)}
-            label="Back"
-            className="mr10"
-          />
+        {isIntroSection ? (
+          <div>
+            <Select
+              options={['small', 'medium', 'large']}
+              value={network}
+              onChange={({ option }) => dispatchNetworkUpdate(option)}
+            />
+            <Button
+              onClick={() => handleContinueClick(acknowledgementId)}
+              rainbow
+              label={isIntroSection ? 'Continue' : 'I Accept'}
+              width={300}
+            />
+          </div>
+        ) : (
+          <>
+            <Button
+              width={100}
+              onClick={() => handleGoBackClick(acknowledgementId)}
+              label="Back"
+              className="mr10"
+            />
+            <Button
+              onClick={() => handleContinueClick(acknowledgementId)}
+              rainbow
+              label={isIntroSection ? 'Continue' : 'I Accept'}
+              width={300}
+            />
+          </>
         )}
-        <Button
-          onClick={() => handleContinueClick(acknowledgementId)}
-          rainbow
-          label={isIntroSection ? 'Continue' : 'I Accept'}
-          width={300}
-        />
       </div>
     );
   };
@@ -119,3 +144,16 @@ export const AcknowledgementSection = ({
     </Container>
   );
 };
+
+const mapStateToProps = state => ({
+  network: state.network,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+  dispatchNetworkUpdate: (network: string) => dispatch(updateNetwork(network)),
+});
+
+export const AcknowledgementSection = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_AcknowledgementSection());
