@@ -163,7 +163,7 @@ export const Hero = () => {
                       color="brand"
                       className="my20"
                     >
-                      Become a validator and help secure eth2.
+                      成为验证者.
                     </Heading>
                   </ScrollAnimation>
                   <ScrollAnimation animateIn="fadeInUp" delay={750} animateOnce>
