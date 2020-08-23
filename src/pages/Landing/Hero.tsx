@@ -163,14 +163,11 @@ export const Hero = () => {
                       color="brand"
                       className="my20"
                     >
-                      成为验证者.
+                      成为验证者，维护ETH2网络安全
                     </Heading>
                   </ScrollAnimation>
                   <ScrollAnimation animateIn="fadeInUp" delay={750} animateOnce>
-                    <Text className="mt25">
-                      Earn continuous payouts for providing a public good to the
-                      community.
-                    </Text>
+                    <Text className="mt25">通过帮助社区来获得持续的收入</Text>
                   </ScrollAnimation>
                   {!!isSmallScreen && <LeslieImage />}
                   <Animate
@@ -183,7 +180,7 @@ export const Hero = () => {
                         fullWidth={m || isSmallScreen}
                         rainbow
                         width={isSmallScreen || m ? undefined : 250}
-                        label={`GET STARTED ${m ? 'ON DESKTOP' : ''}`}
+                        label={`开始吧 ${m ? 'ON DESKTOP' : ''}`}
                       />
                     </Link>
                   </Animate>

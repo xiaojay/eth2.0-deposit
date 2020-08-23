@@ -40,11 +40,11 @@ export const TimelineMileStones = (): JSX.Element => {
     <Container isMobile={m}>
       <ScrollAnimation animateIn="fadeIn" animateOnce>
         <Heading level={2} size="medium" color="blueDark" margin="none">
-          Timeline and milestones
+          时间线和里程碑
         </Heading>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeInUp" animateOnce>
-        <Text className="mt25">Eth2 will be released in several phases.</Text>
+        <Text className="mt25">ETH2.0的发布需要经过多个阶段。</Text>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" animateOnce>
         <MilestoneImg

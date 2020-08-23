@@ -81,14 +81,13 @@ export const StakingRewards: React.FC<{ currentStaked?: number }> = ({
       <SubContainer isMobile={m}>
         <ScrollAnimation animateIn="fadeIn" animateOnce>
           <Heading level={2} size="medium" color="blueDark" margin="none">
-            Staking and rewards
+            抵押和奖励
           </Heading>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" animateOnce>
           <Text className="mt25">
-            Validators get rewarded for proposing and attesting to blocks. The
-            rewards are tied to the overall amount of {TICKER_NAME} staked in
-            the network.
+            验证人通过提出/验证区块来获得奖励。
+            奖励的大小取决于整个网络中所有抵押的{TICKER_NAME}的数量。
           </Text>
           <Link
             external
@@ -96,7 +95,7 @@ export const StakingRewards: React.FC<{ currentStaked?: number }> = ({
             className="my10"
             primary
           >
-            Learn more about the economics of eth2 →
+            学习更多关于ETH2经济学的知识 →
           </Link>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeIn" animateOnce delay={450}>

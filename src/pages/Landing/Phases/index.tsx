@@ -50,29 +50,27 @@ interface phase {
 
 const phases: phase[] = [
   {
-    title: 'Duration',
-    subTitle:
-      'The duration for the deployment of the individual phases depends on many factors.',
+    title: '时间',
+    subTitle: '启动/部署ETH2每个阶段的时间取决于多个因素。',
     linkUrl:
       'https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/',
-    link: 'Phase 0, 1, 2 and 3 duration',
+    link: '阶段 0, 1, 2 and 3 时间表',
     external: true,
   },
   {
-    title: 'Deposit contract formally verified',
+    title: '抵押存款合约已验证',
     subTitle:
-      'The deposit contract has been verified at a byte-code level to ensure everyone’s safety.',
+      '为了保障验证人的资金安全，抵押存款合约在字节层面通过了形式化验证。',
     linkUrl:
       'https://github.com/runtimeverification/deposit-contract-verification/blob/96434de/deposit-contract-verification.pdf',
-    link: 'Formal verification report',
+    link: '查看验证报告',
     external: true,
   },
   {
-    title: 'Validators FAQ',
-    subTitle:
-      'Check out the FAQ page for more information about the roles and responsibilities of eth2 network validators.',
+    title: '验证人常见问题',
+    subTitle: '查看关于验证人角色/责任等的常见问题',
     linkUrl: '/faq',
-    link: 'Learn more about validators',
+    link: '学习更多关于验证人的知识',
     external: false,
   },
 ];
@@ -86,29 +84,25 @@ export const Phases = (): JSX.Element => {
           <div className="px20">
             <ScrollAnimation animateIn="fadeIn" animateOnce>
               <StyledHeading margin="none" className="mt20" isMobile={m}>
-                What is eth2 phase 0?
+                什么是 ETH2.0 阶段0 ？
               </StyledHeading>
             </ScrollAnimation>
             <ScrollAnimation animateIn="fadeInUp" animateOnce>
               <Text className="mt20">
-                Transitioning from proof-of-work to proof-of-stake, eth2 will be
-                launched in at least 3 phases. The idea is to break up this
-                transition into phases each focusing on a different aspect of
-                eth2.
+                从工作量证明到权益证明，ETH2会经过至少3个阶段。
               </Text>
               <Text className="mt20">
-                <PhaseTitle>Phase 0 </PhaseTitle>
-                contains all of the machinery behind eth2&apos;s consensus, it
-                tracks the validators and their balances.
+                <PhaseTitle>阶段 0 </PhaseTitle>
+                包含所有形成ETH2共识背后的机制；记录验证人的行为和抵押资金。
               </Text>
               <Text className="mt20">
-                <PhaseTitle>Phase 1 </PhaseTitle>
-                handles adding and storing the data associated with eth2.
+                <PhaseTitle>阶段 1 </PhaseTitle>
+                处理增加/存储和ETH2有关的数据。
               </Text>
               <Text className="mt20">
-                <PhaseTitle>Phase 2 </PhaseTitle>
+                <PhaseTitle>阶段 2 </PhaseTitle>
                 Phase 2 adds execution to eth2 which enables programmes to be
-                run on top of it.
+                run on top of it. 增加执行层，使得能在上面运行程序（智能合约）。
               </Text>
             </ScrollAnimation>
           </div>

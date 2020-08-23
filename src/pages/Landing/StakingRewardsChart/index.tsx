@@ -99,7 +99,7 @@ const StakingRewardsChart: React.FC<Props> = ({
                           fontFamily: 'sans-serif',
                         }}
                       >
-                        Total {TICKER_NAME} Staked&nbsp; (in millions)
+                        所有抵押的 {TICKER_NAME} 数量&nbsp; (单位: 百万)
                       </text>
                     </>
                   )}
@@ -131,7 +131,7 @@ const StakingRewardsChart: React.FC<Props> = ({
                           transform: 'rotate(-90deg)',
                         }}
                       >
-                        Estimated APR (in {TICKER_NAME})
+                        预计年化收益率 (单位: {TICKER_NAME})
                       </text>
                     </>
                   )}
@@ -151,7 +151,7 @@ const StakingRewardsChart: React.FC<Props> = ({
                       &nbsp;{TICKER_NAME}
                     </text>
                     <text y={17} style={{ fill: '#ADADAD' }}>
-                      Required for Beacon Chain Launch
+                      启动ETH2.0信标链的最少{TICKER_NAME}抵押数量
                     </text>
                   </g>
 
