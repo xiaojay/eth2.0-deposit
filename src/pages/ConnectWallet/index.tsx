@@ -368,7 +368,7 @@ const _ConnectWalletPage = ({
             width={300}
             rainbow
             disabled={!walletProvider || !walletConnected || !networkAllowed}
-            label="Continue"
+            label="继续"
           />
         </Link>
       </div>

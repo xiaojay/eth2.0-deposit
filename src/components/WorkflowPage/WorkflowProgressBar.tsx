@@ -101,15 +101,15 @@ export const WorkflowProgressBar = ({ workflow }: Props): JSX.Element => {
   }
 
   const steps: step[] = [
-    { step: WorkflowStep.OVERVIEW, text: 'Overview' },
-    { step: WorkflowStep.GENERATE_KEY_PAIRS, text: 'Generate Keys' },
+    { step: WorkflowStep.OVERVIEW, text: '概览' },
+    { step: WorkflowStep.GENERATE_KEY_PAIRS, text: '生成密钥' },
     {
       step: WorkflowStep.UPLOAD_VALIDATOR_FILE,
-      text: 'Upload Validator',
+      text: '上传验证人',
     },
-    { step: WorkflowStep.CONNECT_WALLET, text: 'Connect Wallet' },
-    { step: WorkflowStep.SUMMARY, text: 'Summary' },
-    { step: WorkflowStep.TRANSACTION_SIGNING, text: 'Transactions' },
+    { step: WorkflowStep.CONNECT_WALLET, text: '连接到钱包' },
+    { step: WorkflowStep.SUMMARY, text: '总结' },
+    { step: WorkflowStep.TRANSACTION_SIGNING, text: '存款交易' },
   ];
   return (
     <Container>

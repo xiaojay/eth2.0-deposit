@@ -316,12 +316,7 @@ const _UploadValidatorPage = ({
           <Button className="mr10" width={100} label="Back" />
         </Link>
         <Link to={routesEnum.connectWalletPage} onClick={handleSubmit}>
-          <Button
-            width={300}
-            rainbow
-            disabled={!isFileAccepted}
-            label="Continue"
-          />
+          <Button width={300} rainbow disabled={!isFileAccepted} label="继续" />
         </Link>
       </div>
     </WorkflowPageTemplate>

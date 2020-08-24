@@ -60,7 +60,7 @@ export const AcknowledgementSection = ({
               handleGoBackClick(AcknowledgementIdsEnum.confirmation)
             }
             width={100}
-            label="Back"
+            label="返回"
           />
           <Link
             to={routesEnum.generateKeysPage}
@@ -69,12 +69,7 @@ export const AcknowledgementSection = ({
               handleSubmit();
             }}
           >
-            <Button
-              rainbow
-              width={300}
-              disabled={!allAgreedTo}
-              label="Continue"
-            />
+            <Button rainbow width={300} disabled={!allAgreedTo} label="继续" />
           </Link>
         </div>
       );
@@ -85,14 +80,14 @@ export const AcknowledgementSection = ({
           <Button
             width={100}
             onClick={() => handleGoBackClick(acknowledgementId)}
-            label="Back"
+            label="返回"
             className="mr10"
           />
         )}
         <Button
           onClick={() => handleContinueClick(acknowledgementId)}
           rainbow
-          label={isIntroSection ? 'Continue' : 'I Accept'}
+          label={isIntroSection ? '继续' : '我接受'}
           width={300}
         />
       </div>

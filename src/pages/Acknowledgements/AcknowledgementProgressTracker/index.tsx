@@ -18,16 +18,16 @@ const Container = styled.div`
 `;
 
 const acknowledgementsWithCopy = {
-  [AcknowledgementIdsEnum.introSection]: 'Overview',
-  [AcknowledgementIdsEnum.signup]: 'Signup',
-  [AcknowledgementIdsEnum.responsibilities]: 'Responsibilities',
-  [AcknowledgementIdsEnum.slashing]: 'Slashing',
-  [AcknowledgementIdsEnum.keyManagement]: 'Key Management',
-  [AcknowledgementIdsEnum.signingKeys]: 'Signing Keys',
-  [AcknowledgementIdsEnum.transferDelay]: 'Transfer Delay',
-  [AcknowledgementIdsEnum.commitment]: 'Commitment',
-  [AcknowledgementIdsEnum.earlyAdoptionRisks]: 'Early Adoption Risks',
-  [AcknowledgementIdsEnum.confirmation]: 'Confirmation',
+  [AcknowledgementIdsEnum.introSection]: '概览',
+  [AcknowledgementIdsEnum.signup]: '注册',
+  [AcknowledgementIdsEnum.responsibilities]: '责任',
+  [AcknowledgementIdsEnum.slashing]: '惩罚',
+  [AcknowledgementIdsEnum.keyManagement]: '密钥管理',
+  [AcknowledgementIdsEnum.signingKeys]: '签名密钥',
+  [AcknowledgementIdsEnum.transferDelay]: '延后转账',
+  [AcknowledgementIdsEnum.commitment]: '付出',
+  [AcknowledgementIdsEnum.earlyAdoptionRisks]: '早期使用者风险',
+  [AcknowledgementIdsEnum.confirmation]: '确认',
 };
 
 export interface AcknowledgementProgressTrackerProps {

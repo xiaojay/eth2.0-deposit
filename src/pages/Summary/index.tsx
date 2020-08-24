@@ -162,7 +162,7 @@ const _SummaryPage = ({
           <Button className="mr10" width={100} label="Back" />
         </Link>
         <Link to={routesEnum.transactionsPage} onClick={handleSubmit}>
-          <Button width={300} rainbow disabled={!allChecked} label="Continue" />
+          <Button width={300} rainbow disabled={!allChecked} label="继续" />
         </Link>
       </div>
     </WorkflowPageTemplate>

@@ -92,10 +92,10 @@ const _TransactionsPage = ({
 
   const createContinueButtonText = (): string => {
     if (!oneTxConfirmed) {
-      return '🎉 Continue';
+      return '🎉 继续';
     }
     return allTxConfirmed
-      ? '🎉 Continue'
+      ? '🎉 继续'
       : '⚠️ Complete without all transactions confirmed';
   };
 

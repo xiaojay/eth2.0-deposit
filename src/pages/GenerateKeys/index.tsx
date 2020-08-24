@@ -180,7 +180,7 @@ const _GenerateKeysPage = ({
             width={300}
             rainbow
             disabled={!mnemonicAcknowledgementChecked}
-            label="Continue"
+            label="继续"
           />
         </Link>
       </div>
