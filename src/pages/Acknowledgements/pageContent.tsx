@@ -12,22 +12,18 @@ export interface PageContentInterface {
 
 export const pageContent = {
   [AcknowledgementIdsEnum.introSection]: {
-    title: 'Introducing eth2 phase 0',
+    title: 'ETH2.0 阶段0 介绍 ',
     content: (
       <>
         <Text size="large" className="my10">
-          Ethereum 2.0 uses proof-of-stake to secure its network.
+          以太坊2.0 用权益证明(POS)来保障网络安全。
         </Text>
         <Text size="large" className="my10">
-          For this, we need active participants - known as validators - to
-          propose, verify, and vouch for the validity of blocks. In exchange,
-          honest validators receive financial rewards.
+          所以，我们需要活跃的参与者(即“验证人”)来提出/验证/投票正确的区块。
+          作为回报，诚实的验证人将会得到经济激励。
         </Text>
         <Text size="large" className="my10">
-          Importantly, validators need to post {TICKER_NAME} as collateral - in
-          other words, have some funds at stake. The only way to become a
-          validator is to make a one-way {TICKER_NAME} transaction to the
-          deposit contract on the current Ethereum chain.
+          此外，验证人需要抵押 {TICKER_NAME}-也就是说，需要抵押一些资金。
         </Text>
         <Link
           external
@@ -36,31 +32,30 @@ export const pageContent = {
           primary
           withArrow
         >
-          Learn More
+          学习更多
         </Link>
       </>
     ),
   },
   [AcknowledgementIdsEnum.signup]: {
-    title: 'Signing up',
+    title: '验证人注册',
     content: (
       <Text size="large" className="my10">
-        To become a validator on eth2, you need to deposit {PRICE_PER_VALIDATOR}{' '}
-        {` `}
-        {TICKER_NAME} per validator that you wish to run. This process cannot be
-        reversed.
+        要成为一个ETH2验证者，你需要存入{PRICE_PER_VALIDATOR} {` `}
+        {TICKER_NAME}。
+        抵押存款过程不可逆（即你在ETH1存入的以太坊，只能在ETH2用，无法回到ETH1链上）。
       </Text>
     ),
-    acknowledgementText: `I understand that I need to deposit ${PRICE_PER_VALIDATOR} ${TICKER_NAME} to sign up as a validator, and that the transfer of ${TICKER_NAME} into eth2 is one-way, and non-reversible.`,
+    acknowledgementText: `我理解 我需要存入${PRICE_PER_VALIDATOR} ${TICKER_NAME} 来成为一个验证者，并且存入 ${TICKER_NAME} 到ETH2是单向/不可逆的。`,
   },
   [AcknowledgementIdsEnum.responsibilities]: {
-    title: 'Responsibilities',
+    title: '责任',
     content: (
       <>
         <Text size="large" className="my10">
-          Only validators that actively participate in consensus, receive
-          rewards. Those that are offline are penalized. The penalties for being
-          offline are equal to the rewards for actively participating.
+          只有那些活跃参与共识形成的验证人，才能获得经济激励。
+          那些离线的验证人会受到惩罚。
+          一次离线错过验证的罚款数额等同于你参与一次验证获得奖励数额。
         </Text>
         <Link
           external
@@ -69,62 +64,54 @@ export const pageContent = {
           primary
           withArrow
         >
-          Learn more about eth2 economics
+          学习更多关于ETH2经济学的知识
         </Link>
       </>
     ),
-    acknowledgementText:
-      'I understand that it is important to keep my validator online and updated.',
+    acknowledgementText: '我理解 保持我的验证人程序一直在线联网非常重要。',
   },
   [AcknowledgementIdsEnum.slashing]: {
-    title: 'Slashing Risks',
+    title: '作恶惩罚风险',
     content: (
       <>
         <Text size="large" className="my10">
-          Validators that act maliciously, or contrary to the specification, are
-          liable to be slashed (incur a large penalty).
+          验证人如果作恶，或者违反规定，会被处以较大金额的罚款。
         </Text>
         <Link to="/faq" className="my10" primary withArrow>
-          Learn More about about penalties
+          学习更多罚款的知识
         </Link>
       </>
     ),
     acknowledgementText:
-      'I understand that if I act contrary to the specification, I am liable to be slashed.',
+      '我理解 验证人如果作恶，或者违反规定，会被以较大金额罚款。',
   },
   [AcknowledgementIdsEnum.keyManagement]: {
-    title: 'Backup Mnemonic',
+    title: '备份助记词',
     content: (
       <Text size="large" className="my10">
-        Validator keys are derived from a unique mnemonic (or seed). Your seed
-        is the ONLY WAY to withdraw your funds. Above all, keep it safe!
+        验证人账号从一个助记词推导出来。
+        并且你的助记词是你取回抵押资金的唯一方法。 请安全保存它。
       </Text>
     ),
-    acknowledgementText:
-      'I understand that my mnemonic is the ONLY WAY to withdraw my funds.',
+    acknowledgementText: '我理解 我的助记词是取回我的抵押资金的唯一方法。',
   },
   [AcknowledgementIdsEnum.signingKeys]: {
-    title: 'Signing Keys',
+    title: '签名密钥',
     content: (
       <Text size="large" className="my10">
-        This Launchpad will help you create keys for each of your validators.
-        These keys will be saved in key-stores and you will need to give these
-        to your validator software to begin validating. You will also receive a
-        deposit file to upload to this website with the public keys for your
-        validator.
+        本启动面板将会帮助你创建验证人的签名密钥。
+        这些密钥以keystore的方式存储，并且需要你上传到验证人软件/矿机。
       </Text>
     ),
-    acknowledgementText:
-      'I will safeguard my key-stores and give them to my validator software in order to start validating.',
+    acknowledgementText: '我会安全保存这些密钥，并把它上传到验证人软件/矿机。',
   },
   [AcknowledgementIdsEnum.transferDelay]: {
-    title: 'Transfer delay',
+    title: '转账延后',
     content: (
       <>
         <Text size="large" className="my10">
-          Transfers between validators are disabled until at least phase 1.
-          Validators will have to wait until phase 2 (around two years) to be
-          able to withdraw to a specific shard.
+          阶段0无法转账， 验证人之间转账需要等到阶段1，
+          直到阶段2才能提取抵押资金到eth2.0的某个分片(大概需要2年时间)。
         </Text>
         <Link
           external
@@ -134,48 +121,51 @@ export const pageContent = {
           primary
           withArrow
         >
-          Learn More about eth2&apos;s phases
+          学习更多关于ETH2分阶段的知识
         </Link>
       </>
     ),
-    acknowledgementText: `I understand that I CAN NOT TRANSFER my staked ${TICKER_NAME} until at least phase 1, and I CAN NOT WITHDRAW until phase 2.`,
+    acknowledgementText: `我了解道ETH2.0阶段1才能转账，到阶段2.0才能提现。`,
   },
   [AcknowledgementIdsEnum.commitment]: {
-    title: 'Long-term commitment',
+    title: '长期付出',
     content: (
       <Text size="large" className="my10">
-        With transfers disabled until at least phase 1, there’s no way for a
-        validator to voluntarily exit and then restart later. This means
-        validators need to be in it for the long haul.
+        因为在阶段0验证人无法转账，如果你现在成为了验证人，至少在阶段1(1-2年)才能退出。
+        这是个长期付出过程。
       </Text>
     ),
-    acknowledgementText:
-      'Once I exit, I can not rejoin until at least phase 1. This is a long term commitment.',
+    acknowledgementText: '我了解这这是个长期付出过程（1-2年）。',
   },
   [AcknowledgementIdsEnum.earlyAdoptionRisks]: {
-    title: 'Early adopter risks',
+    title: '早期使用者风险',
     content: (
       <Text size="large" className="my10">
         Validators are participating in the initial launch of a novel network.
         As with any new piece of software, there is the potential for software
         bugs. While unlikely, potential bugs may result in slashing.
+        目前验证人参与的是一个全新网络的启动过程。
+        就像所有新开发出来的软件，有可能存在潜在的bug。
+        虽然概率很小，但是出现bug导致抵押资金损失的可能性是存在的。
       </Text>
     ),
     acknowledgementText:
-      'I am an early adopter, and I accept that software and design bugs may result in me being slashed.',
+      '我是早期使用者，我了解ETH2.0如果出现bug，有可能导致资金损失。',
   },
   [AcknowledgementIdsEnum.confirmation]: {
-    title: 'Confirmation',
+    title: '确定',
     content: (
       <>
         <Text size="large" className="my10">
           In order to become a validator, you will generate your new eth2 key
           pairs. To do this and to install the validator software you need to be
           technically capable of running commands in a terminal on a computer.
+          为了成为验证人，需要生成ETH2.0密钥对。
+          在接下来的步骤中，你需要在电脑上安装生成ETH2.0密钥对的软件。
         </Text>
       </>
     ),
     acknowledgementText:
-      'I agree to all of the previous sections, and I am technically capable of setting up and running a validator',
+      '我了解上面所说的知识和提示的风险，准备成为ETH2.0的验证人。',
   },
 };
