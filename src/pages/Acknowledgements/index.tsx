@@ -89,7 +89,7 @@ const _AcknowledgementPage = ({
   }: PageContentInterface = pageContent[activeAcknowledgementId];
 
   return (
-    <WorkflowPageTemplate title="Overview">
+    <WorkflowPageTemplate title="概览">
       <Paper className="flex flex-row">
         <AcknowledgementProgressTracker
           activeAcknowledgementId={activeAcknowledgementId}

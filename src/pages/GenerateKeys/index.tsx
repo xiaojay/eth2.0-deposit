@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import BigNumber from 'bignumber.js';
+//import BigNumber from 'bignumber.js';
 import { CheckBox } from 'grommet';
 import { WorkflowPageTemplate } from '../../components/WorkflowPage/WorkflowPageTemplate';
 import { Paper } from '../../components/Paper';
@@ -17,13 +17,13 @@ import { routesEnum } from '../../Routes';
 import { Link } from '../../components/Link';
 import { Text } from '../../components/Text';
 import { Heading } from '../../components/Heading';
-import { NumberInput } from './NumberInput';
+//import { NumberInput } from './NumberInput';
 import {
   DispatchWorkflowUpdateType,
   updateWorkflow,
   WorkflowStep,
 } from '../../store/actions/workflowActions';
-import { PRICE_PER_VALIDATOR, TICKER_NAME } from '../../utils/envVars';
+//import { PRICE_PER_VALIDATOR, TICKER_NAME } from '../../utils/envVars';
 import instructions1 from '../../static/instructions_1.svg';
 import instructions2 from '../../static/instructions_2.svg';
 
@@ -82,12 +82,12 @@ const _GenerateKeysPage = ({
 
   const renderOSInstructions = (): React.ReactNode => {
     switch (chosenOs) {
-      case operatingSystem.LINUX:
-        return <LinuxInstructions validatorCount={validatorCount} />;
-      case operatingSystem.MAC:
-        return <MacInstructions validatorCount={validatorCount} />;
       case operatingSystem.WINDOWS:
         return <WindowsInstructions validatorCount={validatorCount} />;
+      case operatingSystem.MAC:
+        return <MacInstructions validatorCount={validatorCount} />;
+      case operatingSystem.LINUX:
+        return <LinuxInstructions validatorCount={validatorCount} />;
       default:
         return null;
     }
@@ -99,35 +99,13 @@ const _GenerateKeysPage = ({
 
   return (
     <WorkflowPageTemplate title="Generate Key Pairs">
-      <Paper>
-        <Heading level={2} size="small" color="blueDark">
-          How many validators would you like to run?
-        </Heading>
-        <div className="flex mt20">
-          <div>
-            <Text className="mb5">Validators</Text>
-            <NumberInput value={validatorCount} setValue={setValidatorCount} />
-          </div>
-          <div className="ml50">
-            <Text className="mb5">Cost</Text>
-            <Text>
-              {validatorCount === ''
-                ? validatorCount
-                : new BigNumber(validatorCount)
-                    .times(new BigNumber(PRICE_PER_VALIDATOR))
-                    .toFixed(1)
-                    .toString()}{' '}
-              {TICKER_NAME}
-            </Text>
-          </div>
-        </div>
-      </Paper>
+      
       <Paper className="mt20">
         <Heading level={2} size="small" color="blueMedium">
-          What is your current operating system?
+          你目前用什么操作系统？
         </Heading>
         <Text className="mt20">
-          Choose your current OS so we can tailor the instructions for you.
+          选择你的操作系统，学习相应的教程。
         </Text>
         <OperatingSystemButtons chosenOs={chosenOs} setChosenOs={setChosenOs} />
       </Paper>
@@ -136,23 +114,18 @@ const _GenerateKeysPage = ({
 
       <Paper className="mt20">
         <Heading level={2} size="small" color="blueMedium">
-          Save the key files and get the validator file ready
+          保存你的密钥文件
         </Heading>
         <Text className="mt20">
-          You should now have your mnemonic written down in a safe place and a
-          keystore saved for each of your {validatorCount} validators. Please
-          make sure you keep these safe, preferably offline. Your validator
-          keystores should be available in the
-          <Highlight>validator_keys</Highlight> directory.
+          你现在应该把助记词写下来并保存到安全地方。
+          同时备份好 刚才生成的验证人账号文件夹 <Highlight>validator_keys</Highlight>。
         </Text>
         <InstructionImgContainer>
           <img src={instructions1} alt="" />
         </InstructionImgContainer>
         <Text>
-          The other file you just generated is
-          <Highlight>deposit_data.json</Highlight>. This file contains your
-          validators&apos; public keys which you will need to upload in the next
-          step.
+          刚才生成的 <Highlight>deposit_data.json</Highlight> 包含你验证人账号的公钥；
+          在下一步中会用到。
         </Text>
         <InstructionImgContainer>
           <img src={instructions2} alt="" />
@@ -164,8 +137,7 @@ const _GenerateKeysPage = ({
           checked={mnemonicAcknowledgementChecked}
           label={
             <Text>
-              I am keeping my keys safe and have written down my mnemonic
-              phrase.
+              我已经保存好助记词和验证人账号文件夹validator_keys。
             </Text>
           }
         />

@@ -141,9 +141,6 @@ export const pageContent = {
     title: '早期使用者风险',
     content: (
       <Text size="large" className="my10">
-        Validators are participating in the initial launch of a novel network.
-        As with any new piece of software, there is the potential for software
-        bugs. While unlikely, potential bugs may result in slashing.
         目前验证人参与的是一个全新网络的启动过程。
         就像所有新开发出来的软件，有可能存在潜在的bug。
         虽然概率很小，但是出现bug导致抵押资金损失的可能性是存在的。
@@ -157,9 +154,6 @@ export const pageContent = {
     content: (
       <>
         <Text size="large" className="my10">
-          In order to become a validator, you will generate your new eth2 key
-          pairs. To do this and to install the validator software you need to be
-          technically capable of running commands in a terminal on a computer.
           为了成为验证人，需要生成ETH2.0密钥对。
           在接下来的步骤中，你需要在电脑上安装生成ETH2.0密钥对的软件。
         </Text>
