@@ -194,7 +194,7 @@ const _ConnectWalletPage = ({
       setStatus('Error');
     } else if (!networkAllowed) {
       setStatus(
-        `Please connect to ${
+        `请把钱包连接到 ${
           IS_MAINNET ? 'Ethereum Mainnet' : 'Göerli Testnet'
         }`
       );
@@ -220,7 +220,7 @@ const _ConnectWalletPage = ({
   }
 
   return (
-    <WorkflowPageTemplate title="Connect Wallet">
+    <WorkflowPageTemplate title="连接到钱包">
       <Container>
         <WalletConnectedContainer>
           <Animated
@@ -284,12 +284,12 @@ const _ConnectWalletPage = ({
               </div>
               {!IS_MAINNET && lowBalance && (
                 <FaucetLink
-                  to="https://faucet.goerli.mudit.blog/"
+                  to="https://faucet.goblinminer.com/"
                   external
                   primary
                   withArrow
                 >
-                  Goerli Faucet
+                  Goerli 测试网水龙头
                 </FaucetLink>
               )}
             </Paper>
@@ -351,14 +351,14 @@ const _ConnectWalletPage = ({
       <div className="flex center p30 mt20">
         {!walletConnected && (
           <Link to={routesEnum.uploadValidatorPage}>
-            <Button className="mr10" width={100} label="Back" />
+            <Button className="mr10" width={100} label="返回" />
           </Link>
         )}
         {walletConnected && (
           <Button
             width={300}
             onClick={deactivate}
-            label="Connect a different wallet"
+            label="连接到另一个钱包"
             className="mr10"
             color="blueDark"
           />

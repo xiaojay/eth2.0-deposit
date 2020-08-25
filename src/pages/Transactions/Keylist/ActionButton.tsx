@@ -35,7 +35,7 @@ export const ActionButton = ({ status, txHash, onClick, pubkey }: Props) => {
   if (status === TransactionStatus.READY) {
     return (
       <Container onClick={onClick}>
-        <ButtonText>Start</ButtonText>
+        <ButtonText>开始</ButtonText>
         <FormNextLink />
       </Container>
     );
@@ -43,7 +43,7 @@ export const ActionButton = ({ status, txHash, onClick, pubkey }: Props) => {
   if (status === TransactionStatus.PENDING) {
     return (
       <Container onClick={onClick}>
-        <ButtonText>Retry</ButtonText>
+        <ButtonText>重试</ButtonText>
         <FormNextLink />
       </Container>
     );
@@ -87,11 +87,11 @@ export const ActionButton = ({ status, txHash, onClick, pubkey }: Props) => {
   ) {
     return (
       <Container onClick={onClick}>
-        <ButtonText>Try again</ButtonText>
+        <ButtonText>重试</ButtonText>
         <FormNextLink />
       </Container>
     );
   }
 
-  return <Text>An Error Occurred</Text>;
+  return <Text>有错误发生</Text>;
 };

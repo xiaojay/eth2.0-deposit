@@ -264,7 +264,7 @@ const _UploadValidatorPage = ({
 
     return (
       <div>
-        Drag file to upload or <Highlighted>browse</Highlighted>
+        拖动文件上传 或者 <Highlighted>浏览</Highlighted>
       </div>
     );
   }, [
@@ -280,17 +280,17 @@ const _UploadValidatorPage = ({
     return routeToCorrectWorkflowStep(workflow);
 
   return (
-    <WorkflowPageTemplate title="Upload Deposit File">
+    <WorkflowPageTemplate title="上传 deposit-data 文件">
       <Container className="mt20">
         <Text className="mb20">
-          Please upload the{' '}
-          <Highlighted className="mr5">Deposit Data file</Highlighted>
-          generated in the{' '}
-          <InlineLink to={routesEnum.generateKeysPage} className="mr5">
-            previous step.
+          请上传<InlineLink to={routesEnum.generateKeysPage} className="mr5">
+            上一步
           </InlineLink>
-          The <Code>deposit-data-[timestamp].json</Code> is located in the{' '}
-          <Code>/eth2.0-deposit-cli/validator_keys</Code> directory.
+          中生成的{' '}文件名以
+          <Highlighted className="mr5">deposit-data</Highlighted>开头的文件。
+          
+          这个 <Code>deposit-data-[timestamp].json</Code> 位于{' '}
+          <Code>validator_keys</Code> 文件夹.
         </Text>
         <Dropzone
           isFileStaged={isFileStaged}
@@ -313,7 +313,7 @@ const _UploadValidatorPage = ({
       </Container>
       <div className="flex center p30">
         <Link to={routesEnum.generateKeysPage}>
-          <Button className="mr10" width={100} label="Back" />
+          <Button className="mr10" width={100} label="返回" />
         </Link>
         <Link to={routesEnum.connectWalletPage} onClick={handleSubmit}>
           <Button width={300} rainbow disabled={!isFileAccepted} label="继续" />

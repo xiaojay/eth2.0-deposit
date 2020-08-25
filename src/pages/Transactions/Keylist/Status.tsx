@@ -13,7 +13,7 @@ export const Status = ({ status }: Props) => {
     return (
       <div className="flex">
         <Dot success className="mr5" />
-        <Text>Ready</Text>
+        <Text>准备好了</Text>
       </div>
     );
   }
@@ -21,7 +21,7 @@ export const Status = ({ status }: Props) => {
     return (
       <div className="flex">
         <Dot className="mr5" />
-        <Text>Waiting for wallet confirmation</Text>
+        <Text>等待钱包确认</Text>
       </div>
     );
   }
@@ -29,7 +29,7 @@ export const Status = ({ status }: Props) => {
     return (
       <div className="flex">
         <Spinning kind="pulse" />
-        <Text color="green">Transaction Started</Text>
+        <Text color="green">交易已经发出</Text>
       </div>
     );
   }
@@ -37,7 +37,7 @@ export const Status = ({ status }: Props) => {
     return (
       <div className="flex">
         <Dot success className="mr5" />
-        <Text>Transaction Successful</Text>
+        <Text>交易成功</Text>
       </div>
     );
   }
@@ -45,7 +45,7 @@ export const Status = ({ status }: Props) => {
     return (
       <div className="flex">
         <Dot error className="mr5" />
-        <Text>Transaction Failed</Text>
+        <Text>交易失败</Text>
       </div>
     );
   }
@@ -53,10 +53,10 @@ export const Status = ({ status }: Props) => {
     return (
       <div className="flex">
         <Dot error className="mr5" />
-        <Text>Transaction Rejected</Text>
+        <Text>交易被拒绝</Text>
       </div>
     );
   }
 
-  return <Text>An Error Occurred</Text>;
+  return <Text>有错误发生</Text>;
 };

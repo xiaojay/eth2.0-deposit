@@ -72,13 +72,13 @@ const _KeyList = ({ depositKeys, dispatchTransactionStatusUpdate }: Props) => {
           <TableHeader>
             <CustomTableRow>
               <TableCell scope="col" border="bottom">
-                Validator Public Key
+                验证人公钥
               </TableCell>
               <TableCell scope="col" border="bottom">
-                Status
+                状态
               </TableCell>
               <TableCell scope="col" border="bottom">
-                Action
+                操作
               </TableCell>
             </CustomTableRow>
           </TableHeader>

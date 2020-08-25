@@ -85,18 +85,18 @@ const _SummaryPage = ({
   if (chainId !== NETWORK_ID) return <WrongNetwork />;
 
   return (
-    <WorkflowPageTemplate title="Summary">
+    <WorkflowPageTemplate title="总结">
       <Paper>
         <Heading level={3} size="small" color="blueDark">
-          Launch Pad Summary
+          启动面板总结
         </Heading>
         <Box className="flex flex-row space-between mt10">
           <Container>
-            <Text>Validators</Text>
+            <Text>验证人个数</Text>
             <InfoBox>{amountValidators.toString()}</InfoBox>
           </Container>
           <Container className="mx20">
-            <Text>Total Amount Required</Text>
+            <Text>抵押金额总计</Text>
             <InfoBox>
               {amountValidators.times(convertedPrice).toString()}
               {TICKER_NAME}
@@ -104,14 +104,13 @@ const _SummaryPage = ({
           </Container>
         </Box>
       </Paper>
-      <AcknowledgementSection title="Please proceed with caution">
+      <AcknowledgementSection title="继续前请注意">
         <CheckBox
           onChange={e => setLosePhrase(e.target.checked)}
           checked={losePhrase}
           label={
             <Text>
-              I understand that if I lose my mnemonic phrase, I will not be able
-              to withdraw my funds
+              我了解如果我丢失了助记词，我将无法取回抵押的资金
             </Text>
           }
         />
@@ -120,7 +119,7 @@ const _SummaryPage = ({
             onChange={e => setEarlyAdopt(e.target.checked)}
             checked={earlyAdopt}
             label={
-              <Text> I am aware of the early adopter and slashing risks</Text>
+              <Text> 我了解早期使用者风险</Text>
             }
           />
         </span>
@@ -129,20 +128,19 @@ const _SummaryPage = ({
             onChange={e => setNonReverse(e.target.checked)}
             checked={nonReverse}
             label={
-              <Text> I am aware that this transaction is not reversible</Text>
+              <Text> 我了解目前抵押存款是单向的</Text>
             }
           />
         </span>
       </AcknowledgementSection>
-      <AcknowledgementSection title="Please make sure you aren't being phished">
+      <AcknowledgementSection title="请确保发送抵押存款到正确地址">
         <Text>
-          You are responsible for the transaction. Fraudulent websites might
-          lure you into sending the {PRICE_PER_VALIDATOR} {TICKER_NAME} to them,
-          instead of the official deposit contract. Please check that the
-          address you are sending the transaction to is the correct address.
+          你对这个抵押存款交易负责。
+          有些欺诈网站也许会欺骗你把{PRICE_PER_VALIDATOR} {TICKER_NAME}发送给他们，而不是发送到正确的抵押存款合约地址。
+          发送前请确认正确的抵押存款合约地址。
         </Text>
         <Link to={routesEnum.phishingPage} className="my10" primary withArrow>
-          Learn here how to do it safely
+          学习相关内容
         </Link>
         <span className="mt20">
           <CheckBox
@@ -150,8 +148,7 @@ const _SummaryPage = ({
             checked={noPhish}
             label={
               <Text>
-                I know how to check that I am sending my {TICKER_NAME} into the
-                correct deposit contract and will do so.
+                我知道怎么检查正确的抵押存款合约地址并且会发送到正确地址。
               </Text>
             }
           />
@@ -159,7 +156,7 @@ const _SummaryPage = ({
       </AcknowledgementSection>
       <div className="flex center p30">
         <Link to={routesEnum.connectWalletPage}>
-          <Button className="mr10" width={100} label="Back" />
+          <Button className="mr10" width={100} label="返回" />
         </Link>
         <Link to={routesEnum.transactionsPage} onClick={handleSubmit}>
           <Button width={300} rainbow disabled={!allChecked} label="继续" />

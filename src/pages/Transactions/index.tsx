@@ -125,32 +125,19 @@ const _TransactionsPage = ({
   if (chainId !== NETWORK_ID) return <WrongNetwork />;
 
   return (
-    <WorkflowPageTemplate title="Transactions">
+    <WorkflowPageTemplate title="交易">
       <Paper className="mt20">
         <Heading level={3} size="small" color="blueMedium">
-          Transactions for {depositKeys.length} validators
+          {depositKeys.length} 个验证人的存款交易
         </Heading>
         <Text className="mt20">
-          You must sign an individual transaction for each key you created.
+          你需要为每个验证人发送一次抵押存款交易。
         </Text>
-        <Text className="mt10">
-          You can initiate these all at once, or sign them individually from the
-          keylist below
-        </Text>
-        <div className="flex center mt30">
-          <Button
-            width={300}
-            rainbow
-            label={createButtonText()}
-            onClick={handleAllTransactionsClick}
-            disabled={remainingTxCount === 0}
-          />
-        </div>
       </Paper>
       <KeyList />
       <div className="flex center p30 mt20">
         <Link to={routesEnum.summaryPage}>
-          <Button className="mr10" width={100} label="Back" />
+          <Button className="mr10" width={100} label="返回" />
         </Link>
         <Link to={routesEnum.congratulationsPage} onClick={handleSubmit}>
           <Button

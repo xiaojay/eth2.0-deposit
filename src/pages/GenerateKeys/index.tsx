@@ -145,7 +145,7 @@ const _GenerateKeysPage = ({
 
       <div className="flex center p30">
         <Link to={routesEnum.acknowledgementPage}>
-          <Button className="mr10" width={100} label="Back" />
+          <Button className="mr10" width={100} label="返回" />
         </Link>
         <Link to={routesEnum.uploadValidatorPage} onClick={handleSubmit}>
           <Button
